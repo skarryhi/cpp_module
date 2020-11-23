@@ -31,11 +31,15 @@ int         Book::get_places() {
 }
 
 void        Book::get_contact(std::string const& index) {
-    int id = std::stoi(index) - 1;
-    if (id >= 0 && id <= places) {
-        std::cout << GRN << " 🆔  Your contact:" << WHT <<std::endl;
-        list[id].get_contact();
-    }
-    else
+    try {
+        int id = std::stoi(index) - 1;
+        if (id >= 0 && id < places) {
+            std::cout << GRN << " 🆔  Your contact:" << WHT <<std::endl;
+            list[id].get_contact();
+        }
+        else
+            throw std::exception();
+    } catch (std::exception const &e) {
         std::cerr << RED << " ❌  Invalid index" << WHT << std::endl;
+    }
 }

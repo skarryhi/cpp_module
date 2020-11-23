@@ -46,6 +46,8 @@ int     main()
         }
         else if (cmd == "EXIT")
             break ;
+        else
+            std::cerr << RED << " 🍉  Unknown command" << WHT << std::endl;
     }
     std::cout << GRN << " 🐥  Bye" << std::endl;
     return 0;
