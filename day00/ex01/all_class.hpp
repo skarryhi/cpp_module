@@ -21,9 +21,6 @@ class Contact {
         void            init_contact(std::string* const& array);
         void            get_contact();
         void            get_short_contact();
-        std::string&    get_first_name();
-        std::string&    get_last_name();
-        std::string&    get_nickname();
     private:
         std::string first_name;
         std::string last_name;

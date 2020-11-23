@@ -51,22 +51,20 @@ void        Contact::get_contact() {
     std::cout << "Darkest secret: | " << darkest_secret << std::endl << std::endl;
 }
 
+std::string     cat_string(std::string const& str) {
+    std::string res;
+    if (str.length() > 10) {
+        res = str.substr(0, 9);
+        res = res + ".";
+        return res;
+    }
+    return str;
+}
+
 void        Contact::get_short_contact() {
     std::cout <<
-    '|' << std::setw(10) << first_name <<
-    '|' << std::setw(10) << last_name <<
-    '|' << std::setw(10) << nickname << '|' <<
+    '|' << std::setw(10) << cat_string(first_name) <<
+    '|' << std::setw(10) << cat_string(last_name) <<
+    '|' << std::setw(10) << cat_string(nickname) << '|' <<
     std::endl;
-}
-
-std::string&    Contact::get_first_name() {
-    return first_name;
-}
-
-std::string&    Contact::get_last_name() {
-    return last_name;
-}
-
-std::string&    Contact::get_nickname() {
-    return nickname;
 }
