@@ -1,7 +1,7 @@
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-#include <string>
+# include <string>
 # include <iostream>
 # include <iomanip>
 
@@ -17,9 +17,11 @@
 
 class Zombie {
     public:
+        Zombie();
         void            announce();
         void            set_name(std::string const &name);
         void            set_type(std::string const &type);
+        ~Zombie();
     private:
         std::string     name;
         std::string     type;

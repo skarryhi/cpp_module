@@ -5,8 +5,11 @@
 
 class ZombieEvent {
     public:
-        void    setZombieType();
-        Zombie* newZombie(std::string const &name);
+        ZombieEvent();
+        std::string     setZombieType();
+        Zombie*         randomChump();
+        Zombie*         newZombie(std::string const &name);
+        ~ZombieEvent();
 };
 
 #endif
