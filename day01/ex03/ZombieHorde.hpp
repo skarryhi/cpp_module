@@ -5,7 +5,6 @@
 
 class ZombieHorde {
 public:
-    ZombieHorde();
     ZombieHorde(int const&);
     ~ZombieHorde();
 private:

@@ -1,16 +1,43 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie() : name("name"), type("white") {};
+Zombie::Zombie() {
+    std::string const   names[11] = {
+    "Alpha",
+    "Beast",
+    "Casanova",
+    "Chieftain",
+    "Clearheaded",
+    "Сoolfire",
+    "Commando",
+    "Cowboy",
+    "Detector",
+    "Dragon",
+    "Killer"
+    };
+    this->name = names[rand() % 11];
+    std::string const   types[9] = {
+    "White",
+    "Blaсk",
+    "Pink",
+    "Yellow",
+    "Gray",
+    "Green",
+    "Red",
+    "Blue",
+    "Cyan"
+    };
+    this->type = types[rand() % 9];
+};
 
 void        Zombie::announce() {
-    std::cout << name << "(" << type << ")" << ": \"Meeeoow\"" << std::endl;
+    std::cout << this->name << "(" << this->type << ")" << ": \"Meeeoow\"" << std::endl;
 }
 
-void        Zombie::set_name(std::string const &name) {
+void        Zombie::setName(std::string const &name) {
     this->name = name;
 }
 
-void        Zombie::set_type(std::string const &type) {
+void        Zombie::setType(std::string const &type) {
     this->type = type;
 }
 

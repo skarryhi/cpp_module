@@ -9,7 +9,7 @@
 class Brain {
 public:
     Brain();
-    std::string    identify() const;
+    std::string     identify() const;
 private:
     int             mass;
 };

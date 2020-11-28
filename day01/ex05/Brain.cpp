@@ -1,7 +1,7 @@
 # include "Brain.hpp"
 
 Brain::Brain() {
-    mass = rand();
+    this->mass = rand();
 }
 
 std::string     Brain::identify() const {

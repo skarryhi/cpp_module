@@ -2,9 +2,9 @@
 #include "Human.hpp"
 
 Brain const&    Human::getBrain() {
-    return brain;
+    return this->brain;
 }
 
 std::string     Human::identify() const {
-    return (brain.identify());
+    return (this->brain.identify());
 }
