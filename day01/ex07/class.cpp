@@ -8,8 +8,12 @@ Sed::Sed(std::string const &fileOld, std::string const &s1, std::string const &s
 }
 
 int Sed::check() {
-    if (this->s1.empty() || this->s2.empty() || !this->fileOld.is_open()) {
-        std::cerr << RED BOLD "Invalid argyment" << std::endl;
+    if (this->s1.empty() || this->s2.empty()) {
+        std::cerr << RED BOLD "Invalid argument" << std::endl;
+        return 1;
+    }
+    if (!this->fileOld.is_open()) {
+        std::cerr << RED BOLD "Destination file opening or creating error" << std::endl;
         return 1;
     }
     return 0;
@@ -21,7 +25,7 @@ int Sed::replace() {
     std::string::size_type  pointer = 0;
 
     if (!fileNew.is_open()) {
-        std::cerr << RED BOLD "File is not created" << std::endl;
+        std::cerr << RED BOLD "Destination file opening or creating error" << std::endl;
         return (1);
     }
     while(std::getline(this->fileOld, buffer_line)) {
