@@ -16,16 +16,16 @@
 # define BOLD	"\033[1m"
 
 class Pony {
-    public:
-        Pony();
-        Pony(std::string const &, std::string const &, int);
-        void    pony_story();
-        ~Pony();
-    private:
-        std::string     name;
-        std::string     color;
-        std::string     birthplace;
-        int             old;
+public:
+    Pony();
+    Pony(std::string const &, std::string const &, int);
+    void    pony_story();
+    ~Pony();
+private:
+    std::string     name;
+    std::string     color;
+    std::string     birthplace;
+    int             old;
 };
 
 #endif

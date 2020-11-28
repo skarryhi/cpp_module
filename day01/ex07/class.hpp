@@ -17,16 +17,16 @@
 # define BOLD	"\033[1m"
 
 class Sed {
-    public:
-        Sed(std::string const &, std::string const &, std::string const &);
-        int check();
-        int replace();
-        ~Sed();
-    private:
-        std::string     fileNewName;
-        std::ifstream   fileOld;
-        std::string     s1;
-        std::string     s2;
+public:
+    Sed(std::string const &, std::string const &, std::string const &);
+    int check();
+    int replace();
+    ~Sed();
+private:
+    std::string     fileNewName;
+    std::ifstream   fileOld;
+    std::string     s1;
+    std::string     s2;
 };
 
 #endif

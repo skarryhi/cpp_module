@@ -4,12 +4,12 @@
 #include "Zombie.hpp"
 
 class ZombieEvent {
-    public:
-        ZombieEvent();
-        std::string     setZombieType();
-        Zombie*         randomChump();
-        Zombie*         newZombie(std::string const &name);
-        ~ZombieEvent();
+public:
+    ZombieEvent();
+    std::string     setZombieType();
+    Zombie*         randomChump();
+    Zombie*         newZombie(std::string const &name);
+    ~ZombieEvent();
 };
 
 #endif

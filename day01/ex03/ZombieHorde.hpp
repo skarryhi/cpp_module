@@ -4,12 +4,12 @@
 # include "Zombie.hpp"
 
 class ZombieHorde {
-    public:
-        ZombieHorde();
-        ZombieHorde(int const&);
-        ~ZombieHorde();
-    private:
-        Zombie* horde;
+public:
+    ZombieHorde();
+    ZombieHorde(int const&);
+    ~ZombieHorde();
+private:
+    Zombie* horde;
 };
 
 #endif

@@ -4,11 +4,11 @@
 # include "Brain.hpp"
 
 class Human {
-    public:
-        Brain const&    getBrain();
-        std::string     identify() const;
-    private:
-        Brain           brain;
+public:
+    Brain const&    getBrain();
+    std::string     identify() const;
+private:
+    Brain           brain;
 };
 
 #endif

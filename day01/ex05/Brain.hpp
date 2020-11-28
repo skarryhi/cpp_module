@@ -7,11 +7,11 @@
 #include <sstream>
 
 class Brain {
-    public:
-        Brain();
-        std::string    identify() const;
-    private:
-        int             mass;
+public:
+    Brain();
+    std::string    identify() const;
+private:
+    int             mass;
 };
 
 #endif

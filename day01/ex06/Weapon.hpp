@@ -17,13 +17,13 @@
 # define BOLD	"\033[1m"
 
 class Weapon {
-    public:
-        Weapon();
-        Weapon(std::string const&);
-        void        setType(std::string const&);
-        std::string get_type();
-    private:
-        std::string     type;
+public:
+    Weapon();
+    Weapon(std::string const&);
+    void        setType(std::string const&);
+    std::string get_type();
+private:
+    std::string     type;
 };
 
 #endif

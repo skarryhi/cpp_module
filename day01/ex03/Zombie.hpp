@@ -16,17 +16,17 @@
 # define BOLD	"\033[1m"
 
 class Zombie {
-    public:
-        Zombie();
-        void            announce();
-        void            set_name(std::string const &name);
-        void            set_type(std::string const &type);
-        std::string     give_name();
-        std::string     give_type();
-        ~Zombie();
-    private:
-        std::string     name;
-        std::string     type;
+public:
+    Zombie();
+    void            announce();
+    void            set_name(std::string const &name);
+    void            set_type(std::string const &type);
+    std::string     give_name();
+    std::string     give_type();
+    ~Zombie();
+private:
+    std::string     name;
+    std::string     type;
 };
 
 #endif
