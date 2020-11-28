@@ -1,10 +1,10 @@
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef CLASS_HPP
+# define CLASS_HPP
 
 #include <string>
 # include <iostream>
-#include <fstream>
 # include <iomanip>
+# include <fstream>
 
 # define WHITE	"\x1B[0m"
 # define RED	"\x1B[31m"
@@ -16,14 +16,17 @@
 # define WHT	"\x1B[37m"
 # define BOLD	"\033[1m"
 
-class Weapon {
+class Sed {
     public:
-        Weapon();
-        Weapon(std::string const&);
-        void        setType(std::string const&);
-        std::string get_type();
+        Sed(std::string const &, std::string const &, std::string const &);
+        int check();
+        int replace();
+        ~Sed();
     private:
-        std::string     type;
+        std::string     fileNewName;
+        std::ifstream   fileOld;
+        std::string     s1;
+        std::string     s2;
 };
 
 #endif
