@@ -14,7 +14,7 @@ Fixed::Fixed(int const other) {
 }
 
 Fixed::Fixed(float const other) {
-    std::cout << BOLD GRN "Int constructor called" WHT << std::endl;
+    std::cout << BOLD GRN "Float constructor called" WHT << std::endl;
     this->fixed = (int)roundf(other * (1 << this->nb));
 }
 
