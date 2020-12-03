@@ -3,13 +3,17 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 public:
-    FragTrap();
-    FragTrap(FragTrap const &);
-    FragTrap(std::string const &);
-    ~FragTrap();
-    int         vaulthunter_dot_exe(std::string const & target);
+                        FragTrap(FragTrap const &);
+                        FragTrap(std::string const &);
+                        ~FragTrap();
+    FragTrap&           operator=(FragTrap const &);
+    virtual int         rangedAttack(std::string const & target);
+    virtual int         meleeAttack(std::string const & target);
+    virtual void        takeDamage(unsigned int amount);
+    virtual void        beRepaired(unsigned int amount);
+    int                 vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

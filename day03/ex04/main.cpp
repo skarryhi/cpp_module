@@ -1,22 +1,39 @@
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
+# include "SuperTrap.hpp"
 
 int     main() {
     std::srand(time(0));
-    FragTrap    bloom("🍀 Bloom");
-    NinjaTrap   сloe("🍑 Cloe");
+    FragTrap    b("🍀 Bloom");
+    FragTrap    bloom("Bloom");
+    NinjaTrap   c("🍑 Cloe");
+    NinjaTrap   cloe("Cloe");
+    SuperTrap   u("🍋 Unicorn");
+    SuperTrap   unicorn(u);
 
+    bloom = b;
+    cloe = c;
+    std::cout << std::endl;
 
-    bloom.takeDamage(сloe.rangedAttack(bloom.getName()));
-    сloe.takeDamage(bloom.vaulthunter_dot_exe(сloe.getName()));
+    bloom.takeDamage(cloe.rangedAttack(bloom.getName()));
+    cloe.takeDamage(bloom.vaulthunter_dot_exe(cloe.getName()));
+    std::cout << std::endl;
 
-
-    
     bloom.beRepaired(std::rand() % 88);
-    сloe.beRepaired(std::rand() % 88);
+    cloe.beRepaired(std::rand() % 88);
+    std::cout << std::endl;
 
-    сloe.takeDamage(bloom.meleeAttack(сloe.getName()));
-    bloom.takeDamage(сloe.ninjaShoebox(bloom.getName()));
-    
+    cloe.takeDamage(bloom.meleeAttack(cloe.getName()));
+    bloom.takeDamage(cloe.ninjaShoebox(bloom.getName()));
+    std::cout << std::endl;
+
+    unicorn.takeDamage(cloe.rangedAttack(unicorn.getName()));
+    cloe.takeDamage(unicorn.vaulthunter_dot_exe(cloe.getName()));
+    bloom.takeDamage(unicorn.ninjaShoebox(bloom.getName()));
+    std::cout << std::endl;
+
+    unicorn.beRepaired(std::rand() % 88);
+    std::cout << std::endl;
+
     return 0;
 }

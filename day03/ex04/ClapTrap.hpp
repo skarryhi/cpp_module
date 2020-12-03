@@ -16,30 +16,29 @@
 
 class ClapTrap {
 public:
-    ClapTrap();
-    ClapTrap(ClapTrap const &);
-    ClapTrap(std::string name,
-    int hitPoints, int maxHitPoints, int energyPoints,
-    int maxEnergyPoints, int level,
-    int meleeAttackDamage, int rangedAttackDamage,
-    int armorDamageReduction);
-    ~ClapTrap();
-    ClapTrap&   operator=(ClapTrap const &);
-    int         rangedAttack(std::string const & target);
-    int         meleeAttack(std::string const & target);
-    void        takeDamage(unsigned int amount);
-    void        beRepaired(unsigned int amount);
-    std::string getName() const;
+                        ClapTrap(ClapTrap const &);
+                        ClapTrap(std::string const &name,
+                            int hitPoints, int maxHitPoints, int energyPoints,
+                            int maxEnergyPoints, int level,
+                            int meleeAttackDamage, int rangedAttackDamage,
+                            int armorDamageReduction);
+                        ~ClapTrap();
+    ClapTrap&           operator=(ClapTrap const &);
+    virtual int         rangedAttack(std::string const & target);
+    virtual int         meleeAttack(std::string const & target);
+    virtual void        takeDamage(unsigned int amount);
+    virtual void        beRepaired(unsigned int amount);
+    std::string         getName() const;
 protected:
-    int         hitPoints;
-    int         maxHitPoints;
-    int         energyPoints;
-    int         maxEnergyPoints;
-    int         level;
-    std::string name;
-    int         meleeAttackDamage;
-    int         rangedAttackDamage;
-    int         armorDamageReduction;
+    int                 hitPoints;
+    int                 maxHitPoints;
+    int                 energyPoints;
+    int                 maxEnergyPoints;
+    int                 level;
+    std::string         name;
+    int                 meleeAttackDamage;
+    int                 rangedAttackDamage;
+    int                 armorDamageReduction;
 };
 
 #endif

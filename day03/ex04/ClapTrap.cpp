@@ -1,18 +1,6 @@
 # include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(100),
-    maxHitPoints(100),
-    energyPoints(50),
-    maxEnergyPoints(50),
-    level(1),
-    name("(CT) Princess"),
-    meleeAttackDamage(20),
-    rangedAttackDamage(15),
-    armorDamageReduction(3) {
-    std::cout << YEL BOLD " 🧚‍  (CT) Princess: default constructor colled" WHT << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name,
+ClapTrap::ClapTrap(std::string const &name,
     int hitPoints = 100, int maxHitPoints = 100, int energyPoints = 100,
     int maxEnergyPoints = 100, int level = 100,
     int meleeAttackDamage = 100, int rangedAttackDamage = 100,
@@ -54,15 +42,11 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const &other) {
 
 
 int         ClapTrap::rangedAttack(std::string const & target) {
-    std::cout << BOLD " 🧚‍  (CT) Princess: " << this->name << " attacks " << target <<
-    " at range, causing " << this->rangedAttackDamage <<  " points of damage!" WHT << std::endl;
-    return this->rangedAttackDamage;
+    return (this->hitPoints == 0 ? 0 : this->rangedAttackDamage);
 }
 
 int         ClapTrap::meleeAttack(std::string const & target) {
-    std::cout << BOLD " 🧚‍  (CT) Princess: " << this->name << " attacks " << target <<
-    " at melee, causing " << this->meleeAttackDamage <<  " points of damage!" WHT << std::endl;
-    return this->meleeAttackDamage;
+    return (this->hitPoints == 0 ? 0 : this->meleeAttackDamage);
 }
 
 void        ClapTrap::takeDamage(unsigned int amount) {
@@ -73,9 +57,6 @@ void        ClapTrap::takeDamage(unsigned int amount) {
         if (this->hitPoints < 0)
             this->hitPoints = 0;
     }
-    std::cout << RED BOLD " 🧚‍  (CT) Princess: " << this->name << " take " << amount << " points of damage!" WHT <<
-    " ❤️ " << this->hitPoints << "/" << this->maxHitPoints << "❤️  " <<
-    this->armorDamageReduction << "🛡 " << std::endl;
 }
 
 void        ClapTrap::beRepaired(unsigned int amount) {
@@ -84,9 +65,6 @@ void        ClapTrap::beRepaired(unsigned int amount) {
         if (this->hitPoints > this->maxHitPoints)
             this->hitPoints = this->maxHitPoints;
     }
-    std::cout << GRN BOLD " 🧚‍  (CT) Princess: " << this->name << " heals for 🧁 " << amount << " points!" WHT <<
-    "    ❤️ " << this->hitPoints << "/" << this->maxHitPoints << "❤️  " <<
-    this->armorDamageReduction << "🛡 " << std::endl;
 }
 
 std::string ClapTrap::getName() const {return this->name;}
