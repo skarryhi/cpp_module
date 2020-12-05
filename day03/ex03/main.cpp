@@ -15,7 +15,7 @@ int     main() {
     bloom.beRepaired(std::rand() % 88);
 
     bloom.takeDamage(сloe.rangedAttack(bloom.getName()));
-    irma.takeDamage(сloe.ninjaShoebox(irma.getName()));
+    irma.takeDamage(сloe.ninjaShoebox(irma));
 
     bloom.takeDamage(irma.rangedAttack(bloom.getName()));
     irma.takeDamage(bloom.meleeAttack(irma.getName()));

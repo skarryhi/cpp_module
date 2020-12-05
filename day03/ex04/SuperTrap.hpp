@@ -15,6 +15,7 @@ public:
     virtual int         meleeAttack(std::string const & target);
     virtual void        takeDamage(unsigned int amount);
     virtual void        beRepaired(unsigned int amount);
+    std::string getName() const;
 };
 
 #endif

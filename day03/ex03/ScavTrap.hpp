@@ -10,6 +10,7 @@ public:
     ScavTrap(std::string const &);
     ~ScavTrap();
     int         challengeNewcomer(std::string const & target);
+    std::string getName() const;
 };
 
 #endif

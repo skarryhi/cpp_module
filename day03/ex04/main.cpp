@@ -24,12 +24,12 @@ int     main() {
     std::cout << std::endl;
 
     cloe.takeDamage(bloom.meleeAttack(cloe.getName()));
-    bloom.takeDamage(cloe.ninjaShoebox(bloom.getName()));
+    bloom.takeDamage(cloe.ninjaShoebox(bloom));
     std::cout << std::endl;
 
     unicorn.takeDamage(cloe.rangedAttack(unicorn.getName()));
     cloe.takeDamage(unicorn.vaulthunter_dot_exe(cloe.getName()));
-    bloom.takeDamage(unicorn.ninjaShoebox(bloom.getName()));
+    bloom.takeDamage(unicorn.ninjaShoebox(bloom));
     std::cout << std::endl;
 
     unicorn.beRepaired(std::rand() % 88);

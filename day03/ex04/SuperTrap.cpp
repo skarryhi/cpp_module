@@ -14,6 +14,8 @@ SuperTrap::~SuperTrap() {
     std::cout << YEL BOLD " 🧚‍  (ST) Lol dolls: default destructor colled" WHT << std::endl;
 }
 
+std::string SuperTrap::getName() const {return this->name;}
+
 SuperTrap&   SuperTrap::operator=(SuperTrap const &other) {
     this->hitPoints = other.hitPoints;
     this->maxHitPoints = other.maxHitPoints;

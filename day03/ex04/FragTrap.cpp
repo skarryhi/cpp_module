@@ -29,6 +29,7 @@ FragTrap&   FragTrap::operator=(FragTrap const &other) {
     std::cout << YEL BOLD " 🧚‍  (FT) Winx Club: assignation operator called" WHT << std::endl;
     return *this;
 }
+std::string FragTrap::getName() const {return this->name;}
 
 int         FragTrap::vaulthunter_dot_exe(std::string const & target) {
     if (this->energyPoints < 25)

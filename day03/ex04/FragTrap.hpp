@@ -14,6 +14,7 @@ public:
     virtual void        takeDamage(unsigned int amount);
     virtual void        beRepaired(unsigned int amount);
     int                 vaulthunter_dot_exe(std::string const & target);
+    std::string getName() const;
 };
 
 #endif

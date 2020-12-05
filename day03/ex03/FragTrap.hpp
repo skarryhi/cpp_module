@@ -10,6 +10,7 @@ public:
     FragTrap(std::string const &);
     ~FragTrap();
     int         vaulthunter_dot_exe(std::string const & target);
+    std::string getName() const;
 };
 
 #endif

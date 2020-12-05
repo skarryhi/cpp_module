@@ -1,5 +1,17 @@
 # include "NinjaTrap.hpp"
 
+std::string const    attacks[9] = {
+    "Tailed Beast Bomb",
+    "Naruto's Special Jutsu",
+    "One Thousand Years Of Death",
+    "The Eight Gates",
+    "Infinite Tsukoyomi",
+    "Rasenshuriken",
+    "Fart",
+    "Reaper Death Seal",
+    "Space-Time Migration"
+};
+
 NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name, 60, 60, 120, 120, 1, 60, 5, 0) {
     std::cout << YEL BOLD " 🧚‍  (NT) Bratz: name constructor colled" WHT <<
     " ❤️  " << this->hitPoints << "/" << this->maxHitPoints << " ❤️  " <<
@@ -30,25 +42,40 @@ NinjaTrap&   NinjaTrap::operator=(NinjaTrap const &other) {
     return *this;
 }
 
-int         NinjaTrap::ninjaShoebox(std::string const & target) {
+std::string NinjaTrap::getName() const {return this->name;}
+
+int         NinjaTrap::ninjaShoebox(NinjaTrap const &opponent) {
     if (this->energyPoints < 25)
         std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << " has too little energy" WHT << std::endl;
     else {
-        std::string const    attacks[9] = {
-            "Tailed Beast Bomb",
-            "Naruto's Special Jutsu",
-            "One Thousand Years Of Death",
-            "The Eight Gates",
-            "Infinite Tsukoyomi",
-            "Rasenshuriken",
-            "Fart",
-            "Reaper Death Seal",
-            "Space-Time Migration"
-        };
         this->energyPoints -= 25;
         std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << WHT " makes "
             << attacks[std::rand() % 9] << " to "
-            << target << std::endl;
+            << opponent.getName() << std::endl;
+    }
+    return std::rand() % 40;
+}
+
+int         NinjaTrap::ninjaShoebox(FragTrap const &opponent) {
+    if (this->energyPoints < 25)
+        std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << " has too little energy" WHT << std::endl;
+    else {
+        this->energyPoints -= 25;
+        std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << WHT " makes "
+            << attacks[std::rand() % 9] << " to "
+            << opponent.getName() << std::endl;
+    }
+    return std::rand() % 40;
+}
+
+int         NinjaTrap::ninjaShoebox(ClapTrap const &opponent) {
+    if (this->energyPoints < 25)
+        std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << " has too little energy" WHT << std::endl;
+    else {
+        this->energyPoints -= 25;
+        std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << WHT " makes "
+            << attacks[std::rand() % 9] << " to "
+            << opponent.getName() << std::endl;
     }
     return std::rand() % 40;
 }

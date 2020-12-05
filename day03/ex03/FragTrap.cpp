@@ -22,6 +22,8 @@ FragTrap::~FragTrap() {
     std::cout << YEL BOLD " 🧚‍  (FT) Winx Club: default destructor colled" WHT << std::endl;
 }
 
+std::string FragTrap::getName() const {return this->name;}
+
 int         FragTrap::vaulthunter_dot_exe(std::string const & target) {
     if (this->energyPoints < 25)
         std::cout << BOLD " 🧚‍  (FT) Winx Club: " << this->name << " has too little energy" WHT << std::endl;

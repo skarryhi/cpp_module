@@ -42,10 +42,14 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const &other) {
 
 
 int         ClapTrap::rangedAttack(std::string const & target) {
+    std::cout << BOLD " 🧚‍  (CT) Princess: " << this->name << " attacks " << target <<
+    " at range, causing " << this->rangedAttackDamage <<  " points of damage!" WHT << std::endl;
     return (this->hitPoints == 0 ? 0 : this->rangedAttackDamage);
 }
 
 int         ClapTrap::meleeAttack(std::string const & target) {
+    std::cout << BOLD " 🧚‍  (CT) Princess: " << this->name << " attacks " << target <<
+    " at melee, causing " << this->meleeAttackDamage <<  " points of damage!" WHT << std::endl;
     return (this->hitPoints == 0 ? 0 : this->meleeAttackDamage);
 }
 

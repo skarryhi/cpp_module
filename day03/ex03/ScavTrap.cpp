@@ -23,6 +23,8 @@ ScavTrap::~ScavTrap() {
     std::cout << YEL BOLD " 🧚‍  (ST) W.I.T.C.H.: default destructor colled" WHT << std::endl;
 }
 
+std::string ScavTrap::getName() const {return this->name;}
+
 int         ScavTrap::challengeNewcomer(std::string const & target) {
     if (this->energyPoints < 25)
         std::cout << BOLD " 🧚‍  (ST) W.I.T.H.: " << this->name << " has too little energy" WHT << std::endl;
