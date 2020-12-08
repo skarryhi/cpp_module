@@ -12,7 +12,7 @@ public:
     ScavTrap&   operator=(ScavTrap const &);
     int         rangedAttack(std::string const & target);
     int         meleeAttack(std::string const & target);
-    int         challengeNewcomer(std::string const & target);
+    void        challengeNewcomer();
     void        takeDamage(unsigned int amount);
     void        beRepaired(unsigned int amount);
     std::string getName() const;

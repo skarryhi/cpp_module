@@ -7,6 +7,8 @@ int     main() {
     ScavTrap    irma;
     irma = ScavTrap("🌼 Irma");
 
+    irma.challengeNewcomer();
+
     bloom.takeDamage(irma.meleeAttack(bloom.getName()));
     irma.takeDamage(bloom.rangedAttack(irma.getName()));
 
@@ -17,7 +19,6 @@ int     main() {
 
     irma.beRepaired(std::rand() % 88);
 
-    bloom.takeDamage(irma.challengeNewcomer(bloom.getName()));
     irma.takeDamage(bloom.vaulthunter_dot_exe(irma.getName()));
     
     return 0;

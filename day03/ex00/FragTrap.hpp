@@ -26,7 +26,7 @@ public:
     int         vaulthunter_dot_exe(std::string const & target);
     void        takeDamage(unsigned int amount);
     void        beRepaired(unsigned int amount);
-    std::string getName() const;
+    std::string const& getName() const;
 private:
     int         hitPoints;
     int         maxHitPoints;

@@ -1,4 +1,6 @@
 # include "SuperTrap.hpp"
+# include "FragTrap.hpp"
+# include "NinjaTrap.hpp"
 
 SuperTrap::SuperTrap(std::string const &name) : ClapTrap(name, 100, 100, 120, 120, 1, 60, 20, 5), FragTrap(name), NinjaTrap(name) {
     std::cout << YEL BOLD " 🧚‍  (ST) Lol dolls: name constructor colled" WHT << std::endl;
@@ -31,15 +33,11 @@ SuperTrap&   SuperTrap::operator=(SuperTrap const &other) {
 }
 
 int        SuperTrap::rangedAttack(const std::string &target) {
-    std::cout << BOLD " 🧚‍  (ST) Lol dolls: " << this->name << " attacks " << target <<
-    " at range, causing " << this->rangedAttackDamage <<  " points of damage!" WHT << std::endl;
-	return this->rangedAttackDamage;
+    return FragTrap::rangedAttack(target);
 }
 
 int        SuperTrap::meleeAttack(const std::string &target) {
-    std::cout << BOLD " 🧚‍  (ST) Lol dolls: " << this->name << " attacks " << target <<
-    " at melee, causing " << this->meleeAttackDamage <<  " points of damage!" WHT << std::endl;
-	return this->meleeAttackDamage;
+    return NinjaTrap::meleeAttack(target);
 }
 
 void    SuperTrap::takeDamage(unsigned int amount) {

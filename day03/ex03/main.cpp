@@ -21,13 +21,10 @@ int     main() {
     irma.takeDamage(bloom.meleeAttack(irma.getName()));
 
     irma.beRepaired(std::rand() % 88);
-
-    bloom.takeDamage(irma.challengeNewcomer(bloom.getName()));
-    irma.takeDamage(bloom.vaulthunter_dot_exe(irma.getName()));
-    
+    irma.challengeNewcomer();
     сloe.beRepaired(std::rand() % 88);
 
-    сloe.takeDamage(irma.challengeNewcomer(сloe.getName()));
+    irma.takeDamage(bloom.vaulthunter_dot_exe(irma.getName()));
     сloe.takeDamage(bloom.vaulthunter_dot_exe(сloe.getName()));
     
     return 0;

@@ -25,7 +25,7 @@ ScavTrap::~ScavTrap() {
 
 std::string ScavTrap::getName() const {return this->name;}
 
-int         ScavTrap::challengeNewcomer(std::string const & target) {
+void        ScavTrap::challengeNewcomer() {
     if (this->energyPoints < 25)
         std::cout << BOLD " 🧚‍  (ST) W.I.T.H.: " << this->name << " has too little energy" WHT << std::endl;
     else {
@@ -38,9 +38,7 @@ int         ScavTrap::challengeNewcomer(std::string const & target) {
             "Heart of Kandrakar"
         };
         this->energyPoints -= 25;
-        std::cout << BOLD " 🧚‍  (ST) W.I.T.H.: " << this->name << WHT " makes "
-            << attacks[std::rand() % 6] << " to "
-            << target << std::endl;
+        std::cout << BOLD " 🧚‍  (ST) W.I.T.H.: " << this->name << WHT " challenges newcomer: "
+            << attacks[std::rand() % 6] << std::endl;
     }
-    return std::rand() % 40;
 }

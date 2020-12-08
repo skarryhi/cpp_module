@@ -120,4 +120,4 @@ int         FragTrap::vaulthunter_dot_exe(std::string const & target) {
     return std::rand() % 40;
 }
 
-std::string FragTrap::getName() const {return this->name;}
+std::string const& FragTrap::getName() const {return this->name;}
