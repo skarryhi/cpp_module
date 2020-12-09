@@ -50,7 +50,7 @@ int         NinjaTrap::ninjaShoebox(NinjaTrap const &opponent) {
     else {
         this->energyPoints -= 25;
         std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << WHT " makes "
-            << attacks[std::rand() % 9] << " to "
+            << attacks[std::rand() % 9] << " to (NT) Bratz: "
             << opponent.getName() << std::endl;
     }
     return std::rand() % 40;
@@ -62,7 +62,7 @@ int         NinjaTrap::ninjaShoebox(FragTrap const &opponent) {
     else {
         this->energyPoints -= 25;
         std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << WHT " makes "
-            << attacks[std::rand() % 9] << " to "
+            << attacks[std::rand() % 9] << " to (FT) Winx Club: "
             << opponent.getName() << std::endl;
     }
     return std::rand() % 40;
@@ -74,7 +74,7 @@ int         NinjaTrap::ninjaShoebox(ClapTrap const &opponent) {
     else {
         this->energyPoints -= 25;
         std::cout << BOLD " 🧚‍  (NT) Bratz: " << this->name << WHT " makes "
-            << attacks[std::rand() % 9] << " to "
+            << attacks[std::rand() % 9] << " to (CT) Princess: "
             << opponent.getName() << std::endl;
     }
     return std::rand() % 40;
