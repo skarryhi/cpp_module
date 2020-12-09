@@ -14,16 +14,23 @@ Sorcerer::~Sorcerer() {
     std::cout << this->name << ", " << this->title << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
+Sorcerer::Sorcerer() {}
+
 Sorcerer&   Sorcerer::operator=(Sorcerer const &other) {
     this->name = other.name;
     this->title = other.title;
     return *this;
 }
 
-void        Sorcerer::showing() {
-    std::cout << "I am " << this->name << ", " << this->title << ", and I like ponies!" << std::endl;
+void                   Sorcerer::polymorph(Victim const &victim) {
+    victim.getPolymorphed();
 }
 
-std::string     Sorcerer::getName() const {return this->name;}
-std::string     Sorcerer::getTitle() const {return this->title;}
+std::string const&     Sorcerer::getName() const {return this->name;}
+std::string const&     Sorcerer::getTitle() const {return this->title;}
 
+std::ostream& operator<<(std::ostream &out, const Sorcerer &point)
+{
+    out << "I am " << point.getName() << ", " << point.getTitle() << ", and I like ponies!" << std::endl;
+    return out;
+}

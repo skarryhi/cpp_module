@@ -1,18 +1,14 @@
 #include "Sorcerer.hpp"
-
-std::ostream& operator<<(std::ostream &out, const Sorcerer &point)
-{
-    out << "I am " << point.getName() << ", " << point.getTitle() << ", and I like ponies!";
-    return out;
-}
+#include "Peon.hpp"
+# include "Victim.hpp"
 
 int main()
 {
     Sorcerer robert("Robert", "the Magnificent");
-    // Victim jim("Jimmy");
-    // Peon joe("Joe");
-    std::cout << robert;
-    // robert.polymorph(jim);
-    // robert.polymorph(joe);
+    Victim jim("Jimmy");
+    Peon joe("Joe");
+    std::cout << robert << jim << joe;
+    robert.polymorph(jim);
+    robert.polymorph(joe);
     return 0;
 }
