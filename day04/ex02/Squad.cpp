@@ -13,6 +13,9 @@ Squad::~Squad() {
     delete [] squad;
 }
 Squad&          Squad::operator=(Squad const &other) {
+    count = other.count;
+    for(int i = 0; i <  this->count; i++)
+        push(other.squad[i]);
     return *this;
 }
 
@@ -39,4 +42,16 @@ int             Squad::push(ISpaceMarine* newMarine) {
         *squad = newMarine;
     }
     return count;
+}
+
+int             Squad::getCount() const {
+    return count;
+}
+
+ISpaceMarine*   Squad::getUnit(int x) const {
+    if (x < count && x >= 0)
+        for (int i = 0; squad[i]; i++)
+            if (x == i)
+                return squad[i];
+    return 0;
 }
