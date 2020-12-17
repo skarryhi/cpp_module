@@ -4,8 +4,11 @@
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource {
+private:
+    AMateria*           inventory[4];
 public:
-    virtual             ~MateriaSource() {}
+                        MateriaSource();
+    virtual             ~MateriaSource();
     virtual void        learnMateria(AMateria*);
     virtual AMateria*   createMateria(std::string const & type);
 };

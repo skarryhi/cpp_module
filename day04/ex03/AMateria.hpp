@@ -3,15 +3,18 @@
 
 #include <string>
 #include <iostream>
+#include "ICharacter.hpp"
 
 class AMateria
 {
 private:
-    // [...]
-    unsigned int _xp;
+                        AMateria();
+    std::string         _type;
+    unsigned int        _xp;
 public:
                         AMateria(std::string const & type);
-    // [...]
+                        AMateria(AMateria const&);
+    AMateria&           operator=(AMateria const&);
     virtual             ~AMateria();
     std::string const&  getType() const; //Returns the materia type
     unsigned int        getXP() const; //Returns the Materia's XP
