@@ -3,9 +3,7 @@
 
 Squad::Squad() : count(0), squad(nullptr) {}
 Squad::Squad(const Squad &other) {
-    count = other.count;
-    for(int i = 0; i <  this->count; i++)
-        push(other.squad[i]);
+    *this = other;
 }
 Squad::~Squad() {
     for(int i = 0; i <  this->count; i++)
@@ -15,7 +13,7 @@ Squad::~Squad() {
 Squad&          Squad::operator=(Squad const &other) {
     count = other.count;
     for(int i = 0; i <  this->count; i++)
-        push(other.squad[i]);
+        push(other.squad[i]->clone());
     return *this;
 }
 
@@ -31,7 +29,7 @@ int             Squad::push(ISpaceMarine* newMarine) {
         ISpaceMarine **newSquad = new ISpaceMarine*[count + 1];
         for (int i = 0; i < count; i++)
             newSquad[i] = squad[i];
-        newSquad[count] = newMarine;
+        newSquad[count] = newMarine->clone();
         ++count;
         delete [] squad;
         squad = newSquad;

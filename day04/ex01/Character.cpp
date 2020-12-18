@@ -18,10 +18,11 @@ AWeapon* const&     Character::getWeapon() const {return this->weapon;}
 int                 Character::getAp() const {return this->ap;}
 
 void                Character::equip(AWeapon* weapon) {
-    this->weapon = weapon;
+    if (weapon)
+        this->weapon = weapon;
 }
 void                Character::attack(Enemy* enemy) {
-    if (this->weapon) {
+    if (enemy && this->weapon) {
         std::cout << this->name << " attacks " << enemy->getType() << " with a " << this->weapon->getName() << std::endl;
         enemy->takeDamage(weapon->getDamage());
         if (enemy->getHP() <= 0)

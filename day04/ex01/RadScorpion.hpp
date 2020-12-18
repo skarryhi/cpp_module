@@ -6,6 +6,8 @@
 class RadScorpion : public Enemy {
 public:
                         RadScorpion();
+                        RadScorpion(RadScorpion const&);
+    RadScorpion&        operator=(RadScorpion const&);
     virtual             ~RadScorpion();
 };
 

@@ -8,6 +8,8 @@ class AWeapon
 {
 public:
                         AWeapon(std::string const & name, int apcost, int damage);
+                        AWeapon(AWeapon const&);
+    AWeapon&            operator=(AWeapon const&);
     virtual             ~AWeapon();
     std::string const&  getName() const;
     int                 getAPCost() const;

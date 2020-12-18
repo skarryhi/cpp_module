@@ -7,6 +7,8 @@ class Cure : public AMateria {
 private:
 public:
                         Cure();
+                        Cure(Cure const&);
+    Cure&               operator=(Cure const&);
     virtual             ~Cure();
     virtual AMateria*   clone() const;
     virtual void        use(ICharacter& target);

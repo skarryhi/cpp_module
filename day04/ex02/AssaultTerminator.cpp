@@ -14,8 +14,7 @@ AssaultTerminator&     AssaultTerminator::operator=(AssaultTerminator const & ot
     return *this;
 }
 ISpaceMarine*       AssaultTerminator::clone() const {
-    AssaultTerminator* newMarine = new AssaultTerminator[1];
-    return newMarine;
+    return new AssaultTerminator(*this);
 }
 void                AssaultTerminator::battleCry() const {
     std::cout <<  "This code is unclean. PURIFY IT!" << std::endl;

@@ -1,13 +1,11 @@
 # include "Peon.hpp"
 
-Peon::Peon(std::string const &name) {
-    this->name = name;
-    std::cout << "Some random victim called " << this->name << " just appeared!\n" << "Zog zog." << std::endl;
+Peon::Peon(std::string const &name) : Victim(name) {
+    std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon(Peon const &other) {
-    this->name = other.name;
-    std::cout << "Some random victim called " << this->name << " just appeared!\n" << "Zog zog." << std::endl;
+Peon::Peon(Peon const &other) : Victim(other) {
+    std::cout << "Zog zog." << std::endl;
 }
 
 Peon::~Peon() {
