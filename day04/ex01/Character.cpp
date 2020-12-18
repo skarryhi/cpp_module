@@ -1,6 +1,17 @@
 #include "Character.hpp"
 
 Character::Character(std::string const & name) : name(name), ap(40), weapon(nullptr) {}
+Character::Character(Character const& other) {
+    name = other.name;
+    ap = other.ap;
+    weapon = other.weapon;
+}
+Character&          Character::operator=(Character const& other) {
+    name = other.name;
+    ap = other.ap;
+    weapon = other.weapon;
+    return *this;
+}
 Character::~Character() {}
 std::string const&  Character::getName() const {return this->name;}
 AWeapon* const&     Character::getWeapon() const {return this->weapon;}

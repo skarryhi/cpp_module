@@ -8,7 +8,8 @@ class Character
 {
 public:
                         Character(std::string const & name);
-    // [...]
+                        Character(Character const&);
+    Character&          operator=(Character const&);
                         ~Character();
     void                recoverAP();
     void                equip(AWeapon*);
