@@ -17,6 +17,10 @@ int main()
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+    me->use(2, *bob); // nothing
+    bob->use(0, *me);  // nothing
+    me->unequip(0);
+    me->use(0, *bob); // nothing
     delete bob;
     delete me;
     delete src;

@@ -35,7 +35,7 @@ void                Character::equip(AMateria* m) {
 }
 void                Character::use(int idx, ICharacter& target) {
     if (idx >= 0 && idx < 4 && inventory[idx])
-        inventory[idx]->AMateria::use(target);
+        inventory[idx]->use(target);
 }
 void                Character::unequip(int idx) {
     if (idx >= 0 && idx < 4 && inventory[idx]) {
