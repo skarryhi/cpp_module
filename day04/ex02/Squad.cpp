@@ -29,7 +29,7 @@ int             Squad::push(ISpaceMarine* newMarine) {
         ISpaceMarine **newSquad = new ISpaceMarine*[count + 1];
         for (int i = 0; i < count; i++)
             newSquad[i] = squad[i];
-        newSquad[count] = newMarine->clone();
+        newSquad[count] = newMarine;
         ++count;
         delete [] squad;
         squad = newSquad;

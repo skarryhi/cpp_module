@@ -10,7 +10,7 @@ public:
                             Victim(Victim const &);
                             ~Victim();
     Victim&                 operator=(Victim const &);
-    virtual void                    getPolymorphed() const;
+    virtual void            getPolymorphed() const;
     std::string const&      getName() const;
 protected:
                             Victim();

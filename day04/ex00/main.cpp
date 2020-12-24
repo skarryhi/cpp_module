@@ -10,5 +10,10 @@ int main()
     std::cout << robert << jim << joe;
     robert.polymorph(jim);
     robert.polymorph(joe);
+    
+    Sorcerer ro = robert;
+    std::cout << ro;
+    Victim ji = jim;
+    ro.polymorph(ji);
     return 0;
 }

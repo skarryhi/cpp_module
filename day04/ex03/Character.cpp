@@ -15,6 +15,9 @@ Character::Character(Character const& other) {
 Character&          Character::operator=(Character const& other) {
     this->name = other.name;
     for (int i = 0; i < 4; i++)
+        if (inventory[i])
+            delete inventory[i];
+    for (int i = 0; i < 4; i++)
         inventory[i] = other.inventory[i]->clone();
     return *this;
 }

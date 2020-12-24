@@ -5,7 +5,9 @@ Ice::Ice() : AMateria("ice") {}
 Ice::Ice(Ice const& other) : AMateria(other) {}
 
 Ice&               Ice::operator=(Ice const& other) {
-    return *this = other;
+    this->_xp = other._xp;
+    this->_type = other._type;
+    return *this;
 }
 
 Ice::~Ice() {}

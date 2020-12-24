@@ -8,7 +8,7 @@ class ICharacter;
 
 class AMateria
 {
-private:
+protected:
                         AMateria();
     std::string         _type;
     unsigned int        _xp;

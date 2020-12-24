@@ -6,15 +6,18 @@ int main()
 {
     ISpaceMarine* bob = new TacticalMarine;
     ISpaceMarine* jim = new AssaultTerminator;
+
     ISquad* vlc = new Squad;
     vlc->push(bob);
     vlc->push(jim);
+    ISpaceMarine* lol = jim;//++
+    std::cout << vlc->push(lol) << std::endl;//++
     for (int i = 0; i < vlc->getCount(); ++i)
     {
-    ISpaceMarine* cur = vlc->getUnit(i);
-    cur->battleCry();
-    cur->rangedAttack();
-    cur->meleeAttack();
+        ISpaceMarine* cur = vlc->getUnit(i);
+        cur->battleCry();
+        cur->rangedAttack();
+        cur->meleeAttack();
     }
     delete vlc;
     return 0;
