@@ -20,6 +20,10 @@ public:
     bool                getSigned() const;
     int                 getSignGrade() const;
     int                 getReqGrade() const;
+    virtual void        execute(Bureaucrat const & executor) const;
+    class FormIsNotSigned: public std::exception {
+        virtual const char* what() const throw();
+    };
 };
 
 std::ostream&           operator<<(std::ostream &out, Form const& form);

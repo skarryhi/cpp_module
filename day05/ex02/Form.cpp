@@ -31,11 +31,22 @@ void                Form::beSigned(Bureaucrat const& bur) {
 
 std::string const&  Form::getName() const {return _name;}
 
-bool           Form::getSigned() const {return _signed;}
+bool        Form::getSigned() const {return _signed;}
 
-int            Form::getSignGrade() const {return _signGrade;}
+int         Form::getSignGrade() const {return _signGrade;}
 
-int            Form::getReqGrade() const {return _reqGrade;}
+int         Form::getReqGrade() const {return _reqGrade;}
+
+const char*     Form::FormIsNotSigned::what() const throw() {
+    return "The form is not signed!";
+}
+
+void        Form::execute(Bureaucrat const & executor) const {
+    if(executor.getGrade() > _reqGrade)
+        throw Bureaucrat::GradeTooLowException();
+    if(!_signed)
+        throw FormIsNotSigned();
+}
 
 std::ostream&       operator<<(std::ostream &out, Form const& form) {
     if (form.getSigned())

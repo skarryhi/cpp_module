@@ -23,6 +23,6 @@ int main() {
         std::cout << lu17 << std::endl;
     } catch(const std::exception& e) {
         std::cerr << e.what() << std::endl;
-    }
+    } 
 	return 0;
 }

@@ -2,6 +2,7 @@
 #include "Form.hpp"
 
 int main() {
+    std::srand(time(0));
 	Bureaucrat mike("Mike", 100);
     std::cout << mike << std::endl;
     Form lu17("lu17", 100, 10);
