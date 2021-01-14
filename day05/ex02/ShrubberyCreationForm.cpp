@@ -4,6 +4,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const& target) : Form("
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other) : Form("ShrubberyCreationForm", 145, 137), _target(other._target) {}
 
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
 ShrubberyCreationForm&  ShrubberyCreationForm::operator=(ShrubberyCreationForm const& other) {
     (void)other;
     return *this;
@@ -49,7 +51,7 @@ void            ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     ".o.'.o.'.o.'.\n",
     "   [_____]\n",
     "    \\___/\n" };
-    if (!out.is_open())
+    if (!out.is_open() || out.bad())
         throw OpenFailException();
     for (int i = 0; i < 28; i++) {
         out << messageTarget[i] << std::endl;

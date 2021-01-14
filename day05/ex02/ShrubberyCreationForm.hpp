@@ -18,7 +18,7 @@ public:
 	class WriteFailException: public std::exception {
         virtual const char* what() const throw();
 	};
-    virtual void            execute(const Bureaucrat &executor) const;
+    virtual void            execute(Bureaucrat const& executor) const;
 };
 
 #endif
