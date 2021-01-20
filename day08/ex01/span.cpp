@@ -36,4 +36,5 @@ int     Span::shortestSpan() {
         if (res > vec[i - 1] - vec[i - 2])
             res = vec[i - 1] - vec[i - 2];
     }
+    return res;
 }
